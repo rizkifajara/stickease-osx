@@ -14,6 +14,7 @@
 		D019AA4E2C8EC48500AC08C8 /* StickEaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D019AA4D2C8EC48500AC08C8 /* StickEaseTests.swift */; };
 		D019AA582C8EC48500AC08C8 /* StickEaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D019AA572C8EC48500AC08C8 /* StickEaseUITests.swift */; };
 		D019AA5A2C8EC48500AC08C8 /* StickEaseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D019AA592C8EC48500AC08C8 /* StickEaseUITestsLaunchTests.swift */; };
+		D019AA672C8EC71300AC08C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D019AA662C8EC71200AC08C8 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		D019AA532C8EC48500AC08C8 /* StickEaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StickEaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D019AA572C8EC48500AC08C8 /* StickEaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickEaseUITests.swift; sourceTree = "<group>"; };
 		D019AA592C8EC48500AC08C8 /* StickEaseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickEaseUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D019AA662C8EC71200AC08C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				D019AA3F2C8EC48500AC08C8 /* Assets.xcassets */,
 				D019AA442C8EC48500AC08C8 /* StickEase.entitlements */,
 				D019AA412C8EC48500AC08C8 /* Preview Content */,
+				D019AA662C8EC71200AC08C8 /* AppDelegate.swift */,
 			);
 			path = StickEase;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D019AA672C8EC71300AC08C8 /* AppDelegate.swift in Sources */,
 				D019AA3E2C8EC48300AC08C8 /* ContentView.swift in Sources */,
 				D019AA3C2C8EC48300AC08C8 /* StickEaseApp.swift in Sources */,
 			);
