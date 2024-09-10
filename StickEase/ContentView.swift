@@ -41,6 +41,17 @@ struct ContentView: View {
                     .padding(.horizontal)
 
                     Spacer()
+
+                    Button(action: {
+                        if let appDelegate = NSApp.delegate as? AppDelegate {
+                            appDelegate.createNewNote()
+                        }
+                    }) {
+                        Image(systemName: "plus")
+                        Text("New Note")
+                            .font(.custom("Helvetica Neue", size: 14))
+                    }
+                    .padding(.horizontal)
                 }
                 .padding(.bottom, 10)
             }
