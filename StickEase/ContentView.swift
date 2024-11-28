@@ -8,21 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var lyrics = "Your lyrics will appear here..."
+    @ObservedObject var viewModel: NoteViewModel
     @State private var isEditing = false
+
+    // init(viewModel: NoteViewModel) {
+    //     _viewModel = StateObject(wrappedValue: viewModel)
+    // }
 
     var body: some View {
         GeometryReader { geometry in
             VStack {
                 if isEditing {
-                    TextEditor(text: $lyrics)
+                    TextEditor(text: $viewModel.texts)
                         .font(.custom("Helvetica Neue", size: 14))
                         .padding(4)
                         .background(Color.black.opacity(0.1))
                         .cornerRadius(8)
                 } else {
                     ScrollView {
-                        Text(lyrics)
+                        Text(viewModel.texts)
                             .padding()
                             .frame(minHeight: geometry.size.height - 60)
                     }
@@ -41,6 +45,25 @@ struct ContentView: View {
                     .padding(.horizontal)
 
                     Spacer()
+
+                    Toggle("Visible", isOn: $viewModel.isVisible)
+                        .toggleStyle(SwitchToggleStyle())
+                        .onChange(of: viewModel.isVisible) {
+                            _ in viewModel.toggleVisibility()
+                        }
+
+                    Spacer()
+
+                    Button(action: {
+                        print("New Note button tapped")
+                        viewModel.createNewNote()
+
+                    }) {
+                        Image(systemName: "plus")
+                        Text("New Note")
+                            .font(.custom("Helvetica Neue", size: 14))
+                    }
+                    .padding(.horizontal)
                 }
                 .padding(.bottom, 10)
             }
@@ -52,8 +75,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+// struct ContentView_Previews: PreviewProvider {
+//     static var previews: some View {
+//         ContentView(viewModel: NoteViewModel(appDelegate: AppDelegate()))
+//     }
+// }

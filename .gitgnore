@@ -4,6 +4,8 @@
 .LSOverride
 
 # Xcode
+.xcodeproj/xcuserdata/
+.xcodeproj/project.xcworkspace/xcuserdata/
 xcuserdata/
 *.xcscmblueprint
 *.xccheckout
@@ -68,3 +70,16 @@ injected_container.swift
 *.swp
 *.lock
 profile
+
+# Xcode
+xcuserdata/
+*.xcuserdatad/
+*.xcscmblueprint
+*.xccheckout
+*.xcuserstate
+*.xcworkspace/xcuserdata/
+.xcdebugger/
+
+# Xcode breakpoints
+*.xcbkptlist
+
