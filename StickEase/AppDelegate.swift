@@ -26,8 +26,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
             print("createNewNote() called in AppDelegate")
             let viewModel = NoteViewModel(appDelegate: self)
             let contentView = ContentView(viewModel: viewModel)
+            
+            let randomPosition = self.getRandomPosition()
             let panel = NSPanel(
-                contentRect: NSRect(x: 100, y: 100, width: 300, height: 200),
+                contentRect: NSRect(x: randomPosition.x, y: randomPosition.y, width: 300, height: 200),
                 styleMask: [.nonactivatingPanel, .titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
                 backing: .buffered,
                 defer: false
@@ -48,9 +50,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
             panel.contentView = NSHostingView(rootView: contentView)
             panel.makeKeyAndOrderFront(nil)
             self.windows.append((panel, viewModel))
-            print("New note panelcreated and displayed")
+            print("New note panel created and displayed")
         }
-        
     }
 
     func updateNoteVisibility(for viewModel: NoteViewModel, isVisible: Bool) {
@@ -71,5 +72,15 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
             window.orderFront(nil)
             viewModel.isVisible = true
         }
+    }
+
+    func getRandomPosition() -> NSPoint {
+        if let screen = NSScreen.main {
+            let screenFrame = screen.visibleFrame
+            let x = CGFloat.random(in: screenFrame.minX...(screenFrame.maxX - 300))
+            let y = CGFloat.random(in: screenFrame.minY...(screenFrame.maxY - 200))
+            return NSPoint(x: x, y: y)
+        }
+        return NSPoint(x: 100, y: 100) // fallback position
     }
 }
