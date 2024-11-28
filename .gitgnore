@@ -3,31 +3,62 @@
 .AppleDouble
 .LSOverride
 
-# Xcode
-.xcodeproj/xcuserdata/
-.xcodeproj/project.xcworkspace/xcuserdata/
-xcuserdata/
-*.xcscmblueprint
-*.xccheckout
-*.moved-aside
+# macOS Finder metadata
+._*
+.Spotlight-V100
+.Trashes
+
+# Xcode User Settings
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcworkspace/contents.xcworkspacedata
+*.xcworkspace/*
+!*.xcworkspace/contents.xcworkspacedata
+!*.xcworkspace/xcshareddata/
+
+# Build generated
+build/
 DerivedData/
-*.hmap
+*.moved-aside
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+
+# App packaging
 *.ipa
 *.dSYM.zip
 *.dSYM
 
-# Build products
-build/
-*.o
-*.LinkFileList
-*.hmap
+# Swift Package Manager
+.build/
+Packages/
+Package.pins
+Package.resolved
+*.xcodeproj
+.swiftpm
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
 
 # Dependency managers
 Pods/
 Carthage/Build/
-
-# Swift Package Manager
-.build/
 
 # Other
 *.moved-aside
@@ -43,19 +74,6 @@ Carthage/Build/
 # Playgrounds
 timeline.xctimeline
 playground.xcworkspace
-
-# Swift Package Manager
-Packages/
-Package.pins
-Package.resolved
-.build/
-
-# CocoaPods
-Pods/
-
-# Carthage
-Carthage/Checkouts
-Carthage/Build/
 
 # fastlane
 fastlane/report.xml
