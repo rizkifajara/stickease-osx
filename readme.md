@@ -1,5 +1,7 @@
 # StickEase
 
+![StickEase Icon](StickEase/Assets.xcassets/AppIcon.appiconset/128-mac.png)
+
 StickEase is a lightweight, floating sticky notes application for macOS that helps you keep important notes visible on your screen while you work.
 
 ## Features
